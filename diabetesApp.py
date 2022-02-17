@@ -88,7 +88,7 @@ load_chart(df[columns], "bar")
 st.subheader("Predictions")
 
 # Loading the model
-filename = 'finalized_model_diabetes.sav'
+filename = 'finalized_model.sav'
 loaded_model = joblib.load(filename)
 
 # [Glucose, BMI, Age, BloodPressure]

@@ -6,6 +6,9 @@ import os
 import seaborn as sns
 import time
 
+# Initialize CSV data
+app_name = "diabetes_classification.csv"
+file = load_csv_data(app_name, head=15)
 
 @st.cache(suppress_st_warning=True)
 def load_csv_data(_dir, head=0, tail=0):
@@ -42,9 +45,6 @@ def load_chart(data, kind):
 
 
 
-# Initialize CSV data
-app_name = "diabetes_classification.csv"
-file = load_csv_data(app_name, head=15)
 
 
 # Dataframe visibility

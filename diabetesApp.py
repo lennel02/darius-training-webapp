@@ -62,7 +62,13 @@ target = 'Outcome'
 st.sidebar.title("Diabetes Predictor App")
 st.sidebar.write("Tweak to change predictions")
 
-
+# Dataframe visibility
+st.sidebar.subheader("Data Frame Visibility")
+option_sidebar = st.sidebar.checkbox("Hide")
+if not option_sidebar:
+    st.caption(f"Data Frame: '{app_name}'")
+    st.write(file)
+    st.write("\n\n")
 
 
 # Glucose
@@ -78,13 +84,7 @@ age = st.sidebar.slider("Age", 0, 150, 28)
 # Blood Pressure
 blood_pressure = st.sidebar.slider("Blood Pressure", 0, 250, 100)
 
-# Dataframe visibility
-st.sidebar.subheader("Data Frame Visibility")
-option_sidebar = st.sidebar.checkbox("Hide")
-if not option_sidebar:
-    st.caption(f"Data Frame: '{app_name}'")
-    st.write(file)
-    st.write("\n\n")
+
     
 # Line chart
 load_chart(file[columns], "line")  

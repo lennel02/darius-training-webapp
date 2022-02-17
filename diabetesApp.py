@@ -107,7 +107,8 @@ data = pd.read_csv("diabetes_classification.csv")
 
 if st.checkbox("Show Graphs"):
     sns.pairplot(data[['Glucose', 'BMI', 'Age', 'BloodPressure']], height=8, kind='reg', diag_kind='kde')
+    sns.lineplot(data[['Glucose', 'BMI', 'Age', 'BloodPressure']])
     st.set_option('deprecation.showPyplotGlobalUse', False)
     
-     sns.lineplot(data[['Glucose', 'BMI', 'Age', 'BloodPressure']])
+    
     st.pyplot()

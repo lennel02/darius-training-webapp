@@ -46,7 +46,7 @@ st.write("From the diabetes data, we built a machine learning model for diabetes
 
 # Initialize CSV data
 app_name = "diabetes_classification.csv"
-file = load_csv_data(app_name, head=50)
+file = load_csv_data(app_name, head=15)
 
 # Initialize columns and target
 columns = ['Glucose', 'BMI', 'Age', 'BloodPressure']

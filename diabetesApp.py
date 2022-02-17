@@ -28,7 +28,7 @@ blood_pressure = st.sidebar.slider("Blood Pressure", 0, 300, 100)
 st.subheader("Predictions")
 
 # Loading the model
-filename = 'Darius/finalized_model.sav'
+filename = 'finalized_model.sav'
 loaded_model = joblib.load(filename)
 
 # [Glucose, BMI, Age, BloodPressure]
@@ -42,7 +42,7 @@ else:
 st.write(f"Risk to Diabetes?: {risk_status}")
 
 # Load data
-data = pd.read_csv("Darius/diabetes_classification.csv")
+data = pd.read_csv("diabetes_classification.csv")
 
 if st.checkbox("Show Graphs"):
     sns.pairplot(data[['Glucose', 'BMI', 'Age', 'BloodPressure']], height=8, kind='reg', diag_kind='kde')

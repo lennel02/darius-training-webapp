@@ -33,7 +33,7 @@ def load_chart(data, kind):
         st.area_chart(df[columns])
     elif kind == 'bar':
         st.write("Bar Chart")
-        st.bar_chart(df[columns])
+        st.bar_chart(df[columns],[target])
     else:
         st.write("Line Chart")
         st.line_chart(data)

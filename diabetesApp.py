@@ -98,11 +98,11 @@ loaded_model = joblib.load(filename)
 prediction = round(loaded_model.predict([[glucose, bmi, age, blood_pressure]])[0])
 
 if prediction == 0:
-    risk_status = "Low Probability of having a Diabetes"
+    risk_status = "L.O.W"
 else:
-    risk_status = "High Probability of having a Diabetes"
+    risk_status = "H.I.G.H"
 
-st.write(f"Risk to Diabetes?: {risk_status}")
+st.write(f"Risk to Diabetes: {risk_status}")
 
 # Load data
 data = pd.read_csv("diabetes_classification.csv")

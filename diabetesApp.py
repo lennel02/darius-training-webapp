@@ -47,13 +47,7 @@ app_name = "diabetes_classification.csv"
 file = load_csv_data(app_name, head=15)
 
 
-# Dataframe visibility
-st.sidebar.subheader("Data Frame Visibility")
-option_sidebar = st.sidebar.checkbox("Hide")
-if not option_sidebar:
-    st.caption(f"Data Frame: '{app_name}'")
-    st.write(file)
-    st.write("\n\n")
+
 
 
 st.set_page_config(layout="wide")
@@ -66,7 +60,15 @@ columns = ['Glucose', 'BMI', 'Age', 'BloodPressure']
 target = 'Outcome'
 
 # Sidebar
-st.sidebar.title("Tweak to change predictions")
+st.sidebar.write("Tweak to change predictions")
+
+# Dataframe visibility
+st.sidebar.subheader("Data Frame Visibility")
+option_sidebar = st.sidebar.checkbox("Hide")
+if not option_sidebar:
+    st.caption(f"Data Frame: '{app_name}'")
+    st.write(file)
+    st.write("\n\n")
 
 # Glucose
 glucose = st.sidebar.slider("Glucose", 0, 200, 70)

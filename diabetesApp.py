@@ -40,9 +40,6 @@ def load_chart(data, kind):
         st.line_chart(data)
         
 
-st.set_page_config(layout="wide")
-st.title("Diabetes Predictor App")
-st.write("From the diabetes data, we built a machine learning model for diabetes predictions.")
 
 
 # Initialize CSV data
@@ -59,6 +56,9 @@ if not option_sidebar:
     st.write("\n\n")
 
 
+st.set_page_config(layout="wide")
+st.title("Diabetes Predictor App")
+st.write("From the diabetes data, we built a machine learning model for diabetes predictions.")
 
 
 # Initialize columns and target
@@ -66,8 +66,7 @@ columns = ['Glucose', 'BMI', 'Age', 'BloodPressure']
 target = 'Outcome'
 
 # Sidebar
-st.sidebar.title("Diabetes Predictor App Parameters")
-st.sidebar.write("Tweak to change predictions")
+st.sidebar.title("Tweak to change predictions")
 
 # Glucose
 glucose = st.sidebar.slider("Glucose", 0, 200, 70)

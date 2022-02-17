@@ -28,13 +28,13 @@ def load_csv_data(file_dir, head=0, tail=0):
 def load_chart(data, kind):
     if kind == 'line':
         st.write("Line Chart")
-        st.line_chart(data, hue="BMI")
+        st.line_chart(data)
     elif kind == 'area':
         st.write("Area Chart")
-        st.area_chart(df[columns])
+        st.area_chart(data)
     elif kind == 'bar':
         st.write("Bar Chart")
-        st.bar_chart(df[columns])
+        st.bar_chart(data)
     else:
         st.write("Line Chart")
         st.line_chart(data)

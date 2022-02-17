@@ -8,8 +8,8 @@ import time
 
 
 @st.cache(suppress_st_warning=True)
-def load_csv_data(file_dir, head=0, tail=0):
-    df = pd.read_csv(file_dir)
+def load_csv_data(_dir, head=0, tail=0):
+    file = pd.read_csv(_dir)
     latest_iteration = st.empty()
     bar = st.progress(0)
     for i in range(100):
@@ -19,10 +19,10 @@ def load_csv_data(file_dir, head=0, tail=0):
     bar.empty()
     latest_iteration.text('')
     if head > 0 and tail == 0:
-        return df.head(head)
+        return file.head(head)
     elif head == 0 and tail > 0:
-        return df.head(tail)
-    return df
+        return file.head(tail)
+    return file
 
 
 def load_chart(data, kind):
@@ -46,7 +46,7 @@ st.write("From the diabetes data, we built a machine learning model for diabetes
 
 # Initialize CSV data
 filename = "diabetes_classification.csv"
-df = load_csv_data(filename, head=20)
+file = load_csv_data(filename, head=20)
 
 # Initialize columns and target
 columns = ['Glucose', 'BMI', 'Age', 'BloodPressure']
@@ -60,6 +60,7 @@ st.sidebar.write("Tweak to change predictions")
 glucose = st.sidebar.slider("Glucose", 0, 200, 70)
 
 # BMI
+
 bmi = st.sidebar.slider("BMI", 0.0, 100.9, 50.0)
 
 # Age
@@ -73,17 +74,17 @@ st.sidebar.subheader("Data Frame Visibility")
 option_sidebar = st.sidebar.checkbox("Hide")
 if not option_sidebar:
     st.caption(f"Data Frame: '{filename}'")
-    st.write(df)
+    st.write(file)
     st.write("\n\n")
     
 # Line chart
-load_chart(df[columns], "line")
+load_chart(file[columns], "line")
 
 # Area chart
-load_chart(df[columns], "area")
+load_chart(file[columns], "area")
 
 # Bar chart
-load_chart(df[columns], "bar")
+load_chart(file[columns], "bar")
 
 # Main Page
 st.subheader("Predictions")

@@ -45,6 +45,11 @@ st.title("Diabetes Predictor App")
 st.write("From the diabetes data, we built a machine learning model for diabetes predictions.")
 
 
+# Initialize CSV data
+app_name = "diabetes_classification.csv"
+file = load_csv_data(app_name, head=15)
+
+
 # Dataframe visibility
 st.sidebar.subheader("Data Frame Visibility")
 option_sidebar = st.sidebar.checkbox("Hide")
@@ -53,9 +58,8 @@ if not option_sidebar:
     st.write(file)
     st.write("\n\n")
 
-# Initialize CSV data
-app_name = "diabetes_classification.csv"
-file = load_csv_data(app_name, head=15)
+
+
 
 # Initialize columns and target
 columns = ['Glucose', 'BMI', 'Age', 'BloodPressure']

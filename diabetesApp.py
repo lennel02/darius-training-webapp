@@ -46,7 +46,7 @@ st.write("From the diabetes data, we built a machine learning model for diabetes
 
 # Initialize CSV data
 filename = "diabetes_classification.csv"
-file = load_csv_data(filename, head=20)
+file = load_csv_data(filename, head=50)
 
 # Initialize columns and target
 columns = ['Glucose', 'BMI', 'Age', 'BloodPressure']
@@ -61,13 +61,13 @@ glucose = st.sidebar.slider("Glucose", 0, 200, 70)
 
 # BMI
 
-bmi = st.sidebar.slider("BMI", 0.0, 100.9, 50.0)
+bmi = st.sidebar.slider("BMI", 0.0, 100, 23)
 
 # Age
-age = st.sidebar.slider("Age", 0, 150, 15)
+age = st.sidebar.slider("Age", 0, 150, 28)
 
 # Blood Pressure
-blood_pressure = st.sidebar.slider("Blood Pressure", 0, 300, 100)
+bloodpressure = st.sidebar.slider("Blood Pressure", 0, 250, 70)
 
 # Dataframe visibility
 st.sidebar.subheader("Data Frame Visibility")
@@ -94,7 +94,7 @@ filename = 'finalized_model.sav'
 loaded_model = joblib.load(filename)
 
 # [Glucose, BMI, Age, BloodPressure]
-prediction = round(loaded_model.predict([[glucose, bmi, age, blood_pressure]])[0])
+prediction = round(loaded_model.predict([[glucose, bmi, age, bloodpressure]])[0])
 
 if prediction == 0:
     risk_status = "No"

@@ -78,13 +78,17 @@ if not option_sidebar:
     st.write("\n\n")
     
 # Line chart
-load_chart(file[columns], "line")
+load_chart(file[columns], "line")  
+
+# Bar chart
+load_chart(file[columns], "bar")
 
 # Area chart
 load_chart(file[columns], "area")
 
-# Bar chart
-load_chart(file[columns], "bar")
+load_chart(file[columns['Age']], "area")
+
+
 
 # Main Page
 st.subheader("Predictions")

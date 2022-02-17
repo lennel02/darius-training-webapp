@@ -109,5 +109,5 @@ if st.checkbox("Show Graphs"):
     sns.pairplot(data[['Glucose', 'BMI', 'Age', 'BloodPressure']], height=8, kind='reg', diag_kind='kde')
     st.set_option('deprecation.showPyplotGlobalUse', False)
     
-     sns.lineplot(x=[columns], y=[target],hue="region", style="event")
+     sns.lineplot(data[['Glucose', 'BMI', 'Age', 'BloodPressure']], style="event")
     st.pyplot()

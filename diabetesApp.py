@@ -59,7 +59,7 @@ columns = ['Glucose', 'BMI', 'Age', 'BloodPressure']
 target = 'Outcome'
 
 # Sidebar
-st.sidebar.title("Diabetes Predictor App")
+st.sidebar.title("Dashboard")
 st.sidebar.write("Tweak to change predictions")
 
 # Dataframe visibility

@@ -45,7 +45,7 @@ st.title("Diabetes Predictor App")
 st.write("From the diabetes data, we built a machine learning model for diabetes predictions.")
 
 # Initialize CSV data
-app_name = "Diabetes Classifications"
+app_name = "diabetes_classification.csv"
 file = load_csv_data(app_name, head=50)
 
 # Initialize columns and target

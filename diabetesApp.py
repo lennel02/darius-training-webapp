@@ -61,13 +61,13 @@ glucose = st.sidebar.slider("Glucose", 0, 200, 70)
 
 # BMI
 
-bmi = st.sidebar.slider("BMI", 0.0, 100, 23)
+bmi = st.sidebar.slider("BMI", 0.0, 100.9, 50.0)
 
 # Age
 age = st.sidebar.slider("Age", 0, 150, 28)
 
 # Blood Pressure
-blood_pressure = st.sidebar.slider("Blood Pressure", 0, 250, 70)
+blood_pressure = st.sidebar.slider("Blood Pressure", 0, 300, 100)
 
 # Dataframe visibility
 st.sidebar.subheader("Data Frame Visibility")

@@ -67,7 +67,7 @@ bmi = st.sidebar.slider("BMI", 0.0, 100, 23)
 age = st.sidebar.slider("Age", 0, 150, 28)
 
 # Blood Pressure
-bloodpressure = st.sidebar.slider("Blood Pressure", 0, 250, 70)
+blood_pressure = st.sidebar.slider("Blood Pressure", 0, 250, 70)
 
 # Dataframe visibility
 st.sidebar.subheader("Data Frame Visibility")
@@ -94,7 +94,7 @@ filename = 'finalized_model.sav'
 loaded_model = joblib.load(filename)
 
 # [Glucose, BMI, Age, BloodPressure]
-prediction = round(loaded_model.predict([[glucose, bmi, age, bloodpressure]])[0])
+prediction = round(loaded_model.predict([[glucose, bmi, age, blood_pressure]])[0])
 
 if prediction == 0:
     risk_status = "No"

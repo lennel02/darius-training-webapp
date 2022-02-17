@@ -86,9 +86,6 @@ load_chart(file[columns], "bar")
 # Area chart
 load_chart(file[columns], "area")
 
-load_chart(file[columns['Age']], "area")
-
-
 
 # Main Page
 st.subheader("Predictions")
@@ -101,9 +98,9 @@ loaded_model = joblib.load(filename)
 prediction = round(loaded_model.predict([[glucose, bmi, age, blood_pressure]])[0])
 
 if prediction == 0:
-    risk_status = "No"
+    risk_status = "Low Probability of having a Diabetes"
 else:
-    risk_status = "Yes"
+    risk_status = "High Probability of having a Diabetes"
 
 st.write(f"Risk to Diabetes?: {risk_status}")
 
